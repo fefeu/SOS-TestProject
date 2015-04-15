@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.deamon.newlivespot.MainActivity" >
+
+    
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:background="@color/primary"
+        android:maxHeight="50sp" />
+    
+    <android.support.v7.widget.RecyclerView
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:id="@+id/cardList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_below="@+id/my_awesome_toolbar"/>
+    
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- Main layout -->
+
+        <FrameLayout
+            android:id="@+id/main_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <!-- Nav drawer -->
+
+        <fragment
+            android:id="@+id/fragment_drawer"
+            android:name="com.example.deamon.newlivespot.VenueNavDrawerFragment"
+            android:layout_width="@dimen/drawer_width_least"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            class="com.deamon.newlivespot.FragmentVenueNavDrawer" />
+        
+        
+        
+    </android.support.v4.widget.DrawerLayout>
+
+    
+
+</RelativeLayout>
